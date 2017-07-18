@@ -10,6 +10,7 @@ import configureStore from './store/configureStore';
 
 import TableFriends from "./components/TableFriends";
 import TableFamily from "./components/TableFamily";
+import TableCrud from "./components/TableCrud";
 import { Flex, Box } from "grid-styled";
 
 /* Tab Imports */
@@ -25,7 +26,8 @@ ReactDOM.render(
   <Tabs>
     <TabList>
       <Tab>Hn</Tab>
-      <Tab>Reactabular</Tab>
+      <Tab>TableBasic</Tab>
+      <Tab>TableCrud</Tab>
     </TabList>
   <TabPanel>
     <ItemThreadList />
@@ -39,6 +41,9 @@ ReactDOM.render(
       <TableFamily />
     </Box>
   </Flex>
+  </TabPanel>
+  <TabPanel>
+    <TableCrud />
   </TabPanel>
   </Tabs>
   </Provider>,
