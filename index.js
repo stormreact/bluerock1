@@ -16,6 +16,8 @@ import { Flex, Box } from "grid-styled";
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import './public/stylesheets/react-tabs.css';
+
 const store = configureStore();
 
 ReactDOM.render(
