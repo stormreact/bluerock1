@@ -6,11 +6,39 @@ import { Provider } from 'react-redux';
 import ItemThreadList from './containers/ItemThreadList';
 import configureStore from './store/configureStore';
 
+/* Table Imports */
+
+import TableFriends from "./components/TableFriends";
+import TableFamily from "./components/TableFamily";
+import { Flex, Box } from "grid-styled";
+
+/* Tab Imports */
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-  		<ItemThreadList />
+  <Tabs>
+    <TabList>
+      <Tab>Hn</Tab>
+      <Tab>Reactabular</Tab>
+    </TabList>
+  <TabPanel>
+  <Flex>
+    <Box width={1 / 2} px={2}>
+      <TableFriends />
+    </Box>
+    <Box width={1 / 2} px={2}>
+      <TableFamily />
+    </Box>
+  </Flex>
+  </TabPanel>
+  <TabPanel>
+  <ItemThreadList />
+  </TabPanel>
+  </Tabs>
   </Provider>,
   document.getElementById('root')
 );
