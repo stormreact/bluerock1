@@ -26,6 +26,9 @@ ReactDOM.render(
       <Tab>Reactabular</Tab>
     </TabList>
   <TabPanel>
+    <ItemThreadList />
+  </TabPanel>
+  <TabPanel>
   <Flex>
     <Box width={1 / 2} px={2}>
       <TableFriends />
@@ -34,9 +37,6 @@ ReactDOM.render(
       <TableFamily />
     </Box>
   </Flex>
-  </TabPanel>
-  <TabPanel>
-  <ItemThreadList />
   </TabPanel>
   </Tabs>
   </Provider>,
