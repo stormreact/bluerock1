@@ -45,15 +45,11 @@ class TableThreadList extends Component {
     render() {
         const { ids, selectedPath, page, isLoading } = this.props;
         let iThread = [],
-            rank = 1 + MAX_THREAD_NUMBER * (page - 1),
-            isComment = selectedPath === 'newcomments';
+            rank = 1 + MAX_THREAD_NUMBER * (page - 1)
 
         for (let [ key, value ] of ids) {
             iThread = [...iThread, (
-                isComment ?
-                    <CommentThread key={key} context={value} />
-                          :
-                    <ItemThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
+                <ItemThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
             )];
         }
 
