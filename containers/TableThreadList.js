@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchItemThreadsIfNeeded } from '../actions';
 import { MAX_THREAD_NUMBER, BASE_API_URL } from '../constants';
 // import components
-import ItemThread from '../components/ItemThread';
+import TableThread from '../components/TableThread';
 import NewsHeader from '../components/NewsHeader';
 import CommentThread from '../components/CommentThread';
 
@@ -49,7 +49,7 @@ class TableThreadList extends Component {
 
         for (let [ key, value ] of ids) {
             iThread = [...iThread, (
-                <ItemThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
+                <TableThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
             )];
         }
 
