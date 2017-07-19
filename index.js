@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import ItemThreadList from './containers/ItemThreadList';
+import TableThreadList from './containers/TableThreadList';
 import configureStore from './store/configureStore';
 
 /* Table Imports */
@@ -28,6 +29,7 @@ ReactDOM.render(
       <Tab>Hn</Tab>
       <Tab>TableBasic</Tab>
       <Tab>TableCrud</Tab>
+      <Tab>TableHn</Tab>
     </TabList>
   <TabPanel>
     <ItemThreadList />
@@ -44,6 +46,9 @@ ReactDOM.render(
   </TabPanel>
   <TabPanel>
     <TableCrud />
+  </TabPanel>
+  <TabPanel>
+    <TableThreadList />
   </TabPanel>
   </Tabs>
   </Provider>,
