@@ -23,14 +23,10 @@ class TableThread extends Component {
         );
     }
 
-    getSubtext(props, cleanDisplay = false) {
-        return !cleanDisplay ? (
+    getSubtext(props) {
+        return (
             <div className="newsItem-subtext">
                 {props.score} points by {getAuthor(props)} {getLastUpdatedTime(props)} | {this.getCommentLink(props)}
-            </div>
-        ) : (
-            <div className="newsItem-subtext">
-                {getLastUpdatedTime(props)}
             </div>
         );
     }
@@ -72,14 +68,7 @@ class TableThread extends Component {
         let props = this.props.context || {};
         let cleanDisplay = this.props.selectedPath === 'jobs';
 
-        return cleanDisplay ? (
-            <div className="newsItem margin-left-10">
-                <div className="newsItem-itemText">
-                    {this.getTitle(props)}
-                    {this.getSubtext(props,true)}
-                </div>
-            </div>
-        ) : (
+        return (
             <div className="newsItem">
                 {this.getRank(props)}
                 {getVote(props)}
