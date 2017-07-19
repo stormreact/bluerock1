@@ -66,7 +66,6 @@ class TableThread extends Component {
 
     render() {
         let props = this.props.context || {};
-        let cleanDisplay = this.props.selectedPath === 'jobs';
 
         return (
             <div className="newsItem">
