@@ -3,7 +3,12 @@
 import Firebase from 'firebase';
 import { MAX_THREAD_NUMBER, BASE_API_URL } from '../constants';
 
-let api = new Firebase(BASE_API_URL);
+let config = {
+  databaseURL: 'https://hacker-news.firebaseio.com'
+}
+Firebase.initializeApp(config)
+let version = '/v0'
+const api = Firebase.database().ref(version)
 
 export function getItem (itemId, callback) {
 	itemRef(itemId).once('value', snapshot => callback(snapshot.val()));
