@@ -23,7 +23,7 @@ class TableThreadList extends Component {
     getMore(selectedPath,page) {
         return (
             <div className="newsList-more">
-                <a className="newsList-moreLink" href={`/${selectedPath}?p=${parseInt(page)+1}`}>More</a>
+                <a className="newsList-moreLink" href={`/${selectedPath}?p=${parseInt(page)+1}`}>More Table</a>
             </div>
         );
     }

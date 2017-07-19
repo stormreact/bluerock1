@@ -26,13 +26,13 @@ ReactDOM.render(
   <Provider store={store}>
   <Tabs>
     <TabList>
-      <Tab>Hn</Tab>
+      <Tab>TableHn</Tab>
       <Tab>TableBasic</Tab>
       <Tab>TableCrud</Tab>
-      <Tab>TableHn</Tab>
+      <Tab>Hn</Tab>
     </TabList>
   <TabPanel>
-    <ItemThreadList />
+    <TableThreadList />
   </TabPanel>
   <TabPanel>
   <Flex>
@@ -48,7 +48,7 @@ ReactDOM.render(
     <TableCrud />
   </TabPanel>
   <TabPanel>
-    <TableThreadList />
+    <ItemThreadList />
   </TabPanel>
   </Tabs>
   </Provider>,
