@@ -5,7 +5,7 @@ import TableThread from './TableThread';
 import { MAX_THREAD_NUMBER } from '../constants';
 import { fetchItemThreadsIfNeeded } from '../actions';
 
-const rows = [
+const test_rows = [
   {
     id: 100,
     rank: "1",
@@ -70,33 +70,22 @@ class TableHn extends React.Component {
     render() {
 
         const { ids, selectedPath, page, isLoading } = this.props;
-        let iThread = [],
-            rank = 1 + MAX_THREAD_NUMBER * (page - 1)
+        let rows = [],
+            rank = 1 + MAX_THREAD_NUMBER * (page - 1),
+            count = rank;
 
         for (let [ key, value ] of ids) {
-
-/*
-            iThread = [...iThread, (
-                <TableThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
-            )];
-*/
-
-            console.log(value);
-
-            iThread = [...iThread, (
-
+            rows = [...rows, (
                 {
                   id: key,
-                  rank: key,
+                  rank: count,
                   threadId: value.id,
                   by: value.by,
                   score: value.score,
                   title: value.title
                 }
-
             )];
-
-
+            count++;
         }
 
         return (
@@ -107,7 +96,7 @@ class TableHn extends React.Component {
           >
             <Table.Header />
 
-            <Table.Body rows={iThread} rowKey="id" />
+            <Table.Body rows={rows} rowKey="id" />
           </Table.Provider>
         );
     }
