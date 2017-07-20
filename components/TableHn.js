@@ -5,63 +5,34 @@ const rows = [
   {
     id: 100,
     name: "Ron",
-    tools: {
-      hammer: true
-    },
+    tools: "Furniture",
     city: "pitt"
   },
   {
     id: 101,
     name: "Iris",
-    tools: {
-      hammer: false
-    },
+    tools: "Laundry",
     city: "mtl"
   }
 ];
-const cities = {
-  mtl: "Mt. Lebanon",
-  pitt: "Pittsburgh"
-};
 
 const columns = [
   {
     property: "name",
     header: {
       label: "Name",
-      transforms: [
-        label => ({
-          onClick: () => alert(`clicked ${label}`)
-        })
-      ]
     }
   },
   {
     property: "tools",
     header: {
-      label: "Active",
-      transforms: [
-        label => ({
-          onClick: () => alert(`clicked ${label}`)
-        })
-      ]
-    },
-    cell: {
-      formatters: [tools => (tools.hammer ? "Hammertime" : "nope")]
+      label: "Tool",
     }
   },
   {
     property: "city",
     header: {
       label: "City",
-      transforms: [
-        label => ({
-          onClick: () => alert(`clicked ${label}`)
-        })
-      ]
-    },
-    cell: {
-      formatters: [city => cities[city]]
     }
   }
 ];
