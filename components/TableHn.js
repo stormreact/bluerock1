@@ -67,32 +67,17 @@ class TableHn extends React.Component {
         this.props.dispatch(fetchItemThreadsIfNeeded());
     }
 
-    getSpinning() {
-        return (
-            <div className="initial-wrapper">
-                Loading ...
-            </div>
-        )
-    }
-
     render() {
 
         const { ids, selectedPath, page, isLoading } = this.props;
         let iThread = [],
             rank = 1 + MAX_THREAD_NUMBER * (page - 1)
 
-/*
         for (let [ key, value ] of ids) {
             iThread = [...iThread, (
                 <TableThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
             )];
         }
-
-
-        <div className="newsList">
-           { isLoading && this.getSpinning() }
-        </div>
-*/
 
         return (
 
