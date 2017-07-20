@@ -74,9 +74,29 @@ class TableHn extends React.Component {
             rank = 1 + MAX_THREAD_NUMBER * (page - 1)
 
         for (let [ key, value ] of ids) {
+
+/*
             iThread = [...iThread, (
                 <TableThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
             )];
+*/
+
+            console.log(value);
+
+            iThread = [...iThread, (
+
+                {
+                  id: key,
+                  rank: key,
+                  threadId: value.id,
+                  by: value.by,
+                  score: value.score,
+                  title: value.title
+                }
+
+            )];
+
+
         }
 
         return (
@@ -87,7 +107,7 @@ class TableHn extends React.Component {
           >
             <Table.Header />
 
-            <Table.Body rows={rows} rowKey="id" />
+            <Table.Body rows={iThread} rowKey="id" />
           </Table.Provider>
         );
     }
