@@ -8,7 +8,7 @@ const rows = [
     threadId: "14000123",
     by: "pitt",
     score: "50",
-    title: "Hola"
+    title: "Hola Mike"
   },
   {
     id: 101,
