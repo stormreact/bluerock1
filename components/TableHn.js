@@ -1,5 +1,9 @@
 import React from "react";
 import * as Table from "reactabular-table";
+import { connect } from 'react-redux';
+import TableThread from './TableThread';
+import { MAX_THREAD_NUMBER } from '../constants';
+import { fetchItemThreadsIfNeeded } from '../actions';
 
 const rows = [
   {
@@ -54,18 +58,59 @@ const columns = [
 ];
 
 class TableHn extends React.Component {
-  render() {
-    return (
-      <Table.Provider
-        className="pure-table pure-table-striped"
-        columns={columns}
-      >
-        <Table.Header />
 
-        <Table.Body rows={rows} rowKey="id" />
-      </Table.Provider>
-    );
-  }
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchItemThreadsIfNeeded());
+    }
+
+    getSpinning() {
+        return (
+            <div className="initial-wrapper">
+                Loading ...
+            </div>
+        )
+    }
+
+    render() {
+
+        const { ids, selectedPath, page, isLoading } = this.props;
+        let iThread = [],
+            rank = 1 + MAX_THREAD_NUMBER * (page - 1)
+
+/*
+        for (let [ key, value ] of ids) {
+            iThread = [...iThread, (
+                <TableThread key={rank} selectedPath={selectedPath} rank={rank++} threadId={key} context={value} />
+            )];
+        }
+
+
+        <div className="newsList">
+           { isLoading && this.getSpinning() }
+        </div>
+*/
+
+        return (
+
+          <Table.Provider
+            className="pure-table pure-table-striped"
+            columns={columns}
+          >
+            <Table.Header />
+
+            <Table.Body rows={rows} rowKey="id" />
+          </Table.Provider>
+        );
+    }
 }
 
-export default TableHn;
+export default connect(state => ({
+    ids: state.thread.ids || new Map(),
+    isLoading: state.thread.isLoading === true,
+    selectedPath: state.router.location.pathname.replace('/',''),
+    page: parseInt(state.router.location.query.p) || 1
+}))(TableHn);
