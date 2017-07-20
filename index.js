@@ -9,6 +9,7 @@ import configureStore from './store/configureStore';
 
 /* Table Imports */
 
+import TableHn from "./components/TableHn";
 import TableFriends from "./components/TableFriends";
 import TableFamily from "./components/TableFamily";
 import TableCrud from "./components/TableCrud";
@@ -27,10 +28,14 @@ ReactDOM.render(
   <Tabs>
     <TabList>
       <Tab>TableHn</Tab>
+      <Tab>MyHn</Tab>
       <Tab>TableBasic</Tab>
       <Tab>TableCrud</Tab>
       <Tab>Hn</Tab>
     </TabList>
+  <TabPanel>
+    <TableHn />
+  </TabPanel>
   <TabPanel>
     <TableThreadList />
   </TabPanel>
