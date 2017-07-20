@@ -4,35 +4,51 @@ import * as Table from "reactabular-table";
 const rows = [
   {
     id: 100,
-    name: "Ron",
-    tools: "Furniture",
-    city: "pitt"
+    rank: "1",
+    threadId: "14000123",
+    by: "pitt",
+    score: "50",
+    title: "Hola"
   },
   {
     id: 101,
-    name: "Iris",
-    tools: "Laundry",
-    city: "mtl"
+    rank: "2",
+    threadId: "14000124",
+    by: "mtl",
+    score: "40",
+    title: "Ciao"
   }
 ];
 
 const columns = [
   {
-    property: "name",
+    property: "rank",
     header: {
-      label: "Name",
+      label: "Rank",
     }
   },
   {
-    property: "tools",
+    property: "threadId",
     header: {
-      label: "Tool",
+      label: "ThreadId",
     }
   },
   {
-    property: "city",
+    property: "by",
     header: {
-      label: "City",
+      label: "By",
+    }
+  },
+  {
+    property: "score",
+    header: {
+      label: "Score",
+    }
+  },
+  {
+    property: "title",
+    header: {
+      label: "Title",
     }
   }
 ];
